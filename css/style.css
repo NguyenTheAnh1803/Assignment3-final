@@ -18,6 +18,7 @@ section > .container {
 
   border-collapse: collapse;
 }
+
 span {
   color: #ccc;
 }
@@ -25,32 +26,36 @@ span {
   text-align: center;
 }
 /* BANNER */
-#banner {
-  position: relative;
-
-  height: 70vh;
+.banner-img {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(../images/banner.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
-  text-align: center;
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  position: relative;
 }
 .banner-title {
+  text-align: center;
   position: absolute;
   top: 25%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
   color: #fff;
+}
+.banner-title span {
+  display: inline-block;
+  font-size: 12px !important;
 }
 /* NAV-BAR */
 #nav-bar {
   border: 1px solid #ccc;
-  text-align: center;
+
   /* border-collapse: collapse; */
 }
 
 .container-nav {
-  padding: 0px important;
+  padding: 0px;
   /* border-collapse: collapse; */
 }
 .container-section {
@@ -79,7 +84,6 @@ table {
 }
 td {
   padding: 8px 32px;
-  height: 12px;
 }
 .icons {
   color: #339af0;
@@ -87,23 +91,21 @@ td {
 /* ABOUT */
 #target {
   background-color: #f1f3f5;
-  padding-top: 62px;
-  padding-left: 48px;
-  padding-right: 50px;
-  line-height: 1.5;
+  padding-left: 30px;
+  padding-top: 48px;
+  line-height: 1.8;
 }
 .section-title {
   margin-bottom: 20px;
-  font-size: 24px;
 }
 #personal-info {
   background-color: #dee2e6;
-  padding-left: 48px;
-  padding-top: 62px;
+  padding-left: 30px;
+  padding-top: 48px;
   line-height: 1.8;
 }
 .mt-40 {
-  list-style-type: none !important;
+  list-style-type: none;
 }
 .info span {
   font-weight: 600 !important;
@@ -121,8 +123,12 @@ td {
   padding: 0;
   width: 100%;
 }
+/* .row {
+  width: 100%;
+} */
 
 /* JOB-INFO */
+
 #job-info > .container {
   display: grid;
   grid-template-columns: 30% 30% 30%;
@@ -130,20 +136,26 @@ td {
   justify-content: space-between;
 }
 .box-content {
-  display: grid;
+  margin-top: 30px;
+}
+.box-content {
   border: 1px solid #ccc;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-  grid-template-columns: 75% 25%;
+
   padding: 20px;
+}
+.box-title {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  margin-bottom: 42px;
 }
 .title-job {
   /* margin-top: 24px; */
-
-  font-size: 20px;
+  font-size: 28px;
   margin-left: 14px;
-  font-weight: 600px;
+  font-weight: 600;
   margin: auto 0;
-  padding: 15px;
+  padding: 5px;
 }
 .icon-toolbox {
   font-size: 32px;
@@ -166,19 +178,24 @@ td {
 .details-time {
   margin-top: 16px;
 }
+.details-time span {
+  /* background-color: #339af0;
+  color: #fff; */
+  padding: 5px 10px;
+  border-radius: 10px;
+}
 .details-title {
   font-weight: 600;
 }
 
 /* Hobby */
 .content--hobby {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 .box-details {
-  height: 300px;
 }
 .icons-hobby {
   border: 2px solid #51cf66;
@@ -195,16 +212,14 @@ td {
   margin: 0;
 }
 .box-details p {
-  font-size: 12px;
 }
 /* KỸ NĂNG */
 .el {
   background-color: #ccc;
   display: inline-block;
-  height: 5px;
+  height: 2px;
   margin-right: 10px;
   width: 45px;
-  line-height: 1.5;
 }
 .el--1,
 .el--2 {
@@ -217,11 +232,6 @@ td {
   gap: 32px;
   justify-content: space-between;
 }
-.prize-one {
-  display: flex;
-  margin: 10px 20px;
-  padding: 20px;
-}
 .prize-row {
   display: flex;
   justify-content: space-around;
@@ -229,25 +239,27 @@ td {
   border-bottom: 1px solid orange;
   width: 100%;
 }
+.prize-one {
+  display: flex;
+
+  padding: 20px;
+}
 .prize-image {
-  width: 200px;
-  height: 100px;
+  /* width: 250px; */
 }
+
 .prize-info {
-  margin: 0px 16px;
-}
-.prize-info p {
-  line-height: 1.8;
+  font-size: 14px;
 }
 .prize-two {
   display: flex;
   border-left: 1px solid orange;
-  margin: 10px 20px;
+  margin-bottom: 20px;
   padding: 20px;
 }
 .prize-three {
   display: flex;
-  margin: 10px 20px;
+
   padding: 20px;
 }
 h4 {
@@ -257,21 +269,47 @@ li {
   list-style-type: none;
 }
 ul {
-  /* display: flex;
-  gap: 24px; */
+  padding-left: 0 !important;
 }
-
 /* project */
 .project-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  height: 100%;
   gap: 24px;
+}
+
+.project-one,
+.project-two,
+.project-three {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .project-info {
   display: flex;
+
   gap: 10px;
   padding: 12px;
   border: 1px solid #ccc;
+  justify-content: center;
+  align-items: center;
+}
+.project-info__icons {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 5px;
+}
+.project-info__icons .one {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 5px;
+}
+.project-info p {
+  margin-bottom: 0;
 }
 .project-title {
   font-size: 18px;
@@ -279,26 +317,33 @@ ul {
 
   border: 1px solid #ccc;
   padding: 16px;
+  text-align: center;
+}
+.project-title p {
+  margin-bottom: 0;
 }
 .time-project {
-  background-color: #339af0;
+  /* background-color: #339af0; */
   border-radius: 15px;
   width: 50px;
-  height: 20px;
-  color: #fff;
+  padding: 5px 0px;
+  /* color: #fff; */
   font-size: 12px;
   text-align: center;
 
   display: inline-block;
 }
 .project-details {
-  height: 300px;
   border: 1px solid #ccc;
+  flex: 1;
 }
 .project-details td {
   padding: 5px;
   margin: 5px;
   border-bottom: 1px solid #ccc;
+}
+.project-details tr:nth-child(even) {
+  height: 100%;
 }
 table,
 td {
@@ -306,10 +351,8 @@ td {
 }
 .footer-icons {
   display: flex;
-  text-decoration: none;
-  font-size: 20px;
   margin: auto;
-  text-align: center;
+  text-decoration: none;
 }
 .footer-icons i {
 }
@@ -318,260 +361,5 @@ td {
   justify-content: center;
   align-items: center;
   gap: 32px;
+  margin: 0 auto;
 }
-
-/* <div class="section" id="education">
-          <h2 class="section-title">Học vấn</h2>
-          <div class="section-content">
-            <div class="content-details">
-              <div class="details-time"><p>06/2021-05/2022</p></div>
-              <div class="details-content">
-                <p class="details-title">Funix</p>
-
-                <p>Tốt nghiệp chứng chỉ doanh nghiệp nhánh fullstack</p>
-                <p>GPA:9/10</p>
-              </div>
-            </div>
-
-            <br />
-            <div class="content-details">
-              <div class="details-time"><p>06/2016-07/20219</p></div>
-              <div class="details-content">
-                <p class="details-title">Cử nhân đại học FPT</p>
-
-                <p>Chuyên ngàn: Kỹ thuật phần mềm</p>
-                <p>3.2/4</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section" id="experience">
-          <h2 class="section-title">Kinh nghiệm làm việc</h2>
-          <div class="section-content">
-            <div class="content-details">
-              <div class="details-time"><p>06/2021-04/2022</p></div>
-              <div class="details-content">
-                <p class="details-title">Công Ty X</p>
-
-                <p>Web Designer</p>
-                <p>- Thiết kế Website dự trên yêu cầu của khách hàng</p>
-
-                <p>- Sử dụng các công cụ: Figma,Canva, PTS</p>
-              </div>
-            </div>
-
-            <br />
-            <div class="content-details">
-              <div class="details-time"><p>05/2022-hiện tại</p></div>
-              <div class="details-content">
-                <p class="details-title">Công ty Y</p>
-                <p>Full Stack Developer</p>
-                <p>
-                  - Xây dựng, phát triển Website dự trên thiết kế và yêu cầu đã
-                  có
-                </p>
-                <p>
-                  - Phân tích và thiết kế Database, sử dụng các hệ quản trị
-                  CSDL(MySQL,SqlServer,NoSQL,..) và viết được các câu truy vấn
-                </p>
-                <p>
-                  - Sử dụng ngôn ngữ server-side(Python,Java,...) để xây dụng
-                  Web Service
-                </p>
-              </div>
-            </div>
-            <!-- <hr />
-            <br />
-            <div class="abc"><p>05/2022-hiện tại</p></div>
-            <div class="abc">
-              <h3>Công ty Y</h3>
-              <p>Full Stack Developer</p>
-              <p>
-                - Xây dựng, phát triển Website dự trên thiết kế và yêu cầu đã có
-              </p>
-              
-              <p>
-                - Sử dụng ngôn ngữ server-side(Python,Java,...) để xây dụng Web
-                Service
-              </p>
-            </div> -->
-          </div>
-        </div>
-
-        <div class="section" id="activity">
-          <h2 class="section-title">Hoạt động</h2>
-          <div class="section-content">
-            <div class="content-details">
-              <div class="details-time"><p>03/2019-04/2019</p></div>
-              <div class="details-content">
-                <p class="details-title">FPT Edu Hackathon 2019</p>
-                <p>Giải 3 bảng A</p>
-                <p>Đề tài: Trang web về phân loại rác thải</p>
-              </div>
-            </div>
-
-            <br />
-            <div class="content-details">
-              <div class="details-time"><p>08/2016-08/2017</p></div>
-              <div class="details-content">
-                <p class="details-title">Câu lạc bộ Z</p>
-
-                <p>Trưởng ban chuyên môn</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section" id="skill">
-          <h2 class="section-title">Kỹ năng</h2>
-          <div class="section-content">
-            <!-- <div class="container">
-              <div class="abc">
-                <p><strong>HTML/CSS</strong></p>
-              </div>
-              <div class="abc">
-                <p>Fundamental</p>
-              </div>
-            </div>
-            <hr />
-            <br />
-            <div class="container">
-              <div class="abc">
-                <p><strong>Javascript</strong></p>
-              </div>
-              <div class="abc">
-                <p>Intermediate</p>
-              </div>
-            </div>
-            <hr />
-            <br />
-            <div class="container">
-              <div class="abc">
-                <p><strong>NodeJS</strong></p>
-              </div>
-              <div class="abc">
-                <p>Intermediate</p>
-              </div>
-            </div>
-            <hr />
-            <br />
-            <div class="container">
-              <div class="abc">
-                <p><strong>Bootstrap 5</strong></p>
-              </div>
-              <div class="abc">
-                <p>Fundamental</p>
-              </div>
-            </div>
-            <hr />
-            <br /> -->
-          </div>
-        </div>
-
-        <div class="section" id="certificate">
-          <h2 class="section-title">Chứng nhận - Giải thưởng</h2>
-          <div class="section-content">
-            <!-- <div class="content-details">
-              <div class="abc">
-                <p>2021</p>
-              </div>
-              <div class="abc">
-                <p>CHỨNG CHỈ LẬP TRÌNH WEB-FUNIX</p>
-              </div>
-            </div>
-            <div class="container">
-              <div class="abc">
-                <p>2021</p>
-              </div>
-              <div class="abc">
-                <p>CHỨNG CHỈ LẬP TRÌNH WEB JAVASCRIPT</p>
-              </div>
-            </div> -->
-          </div>
-        </div>
-
-        <div class="section" id="hobby">
-          <h2 class="section-title">Sở thích</h2>
-          <div class="section-content">
-            <div>
-              <ul>
-                <li>Âm nhạc</li>
-                <li>Chơi game</li>
-                <li>Du lịch</li>
-                <li>Nấu ăn</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="section" id="project">
-          <h2 class="section-title">Dự án</h2>
-          <div class="section-content">
-            <div>
-              <h1>TRANG WEB QUẢN LÝ THÚ CƯNG</h1>
-              <h3>2021</h3>
-              <ul>
-                <li><strong>Vị trí:</strong> Developer</li>
-                <li>
-                  <strong>Mô tả:</strong> Ứng dụng giúp quản lý các thông tin
-                  của thứ cưng như: Cân nặng, giống, tình trạng tiêm
-                  chủng,...Bao gốm các chức năng thêm / sửa / xóa
-                </li>
-                <li>
-                  <strong>Nhiệm vụ:</strong> Phát triển, tối ưu code và xử lý
-                  lỗi.
-                </li>
-                <li><strong>Công nghệ:</strong>HTML,CSS</li>
-              </ul>
-            </div>
-            <div>
-              <h1>TRANG WEB XEM TIN TỨC</h1>
-              <h3>2021</h3>
-              <ul>
-                <li><strong>Vị trí:</strong> Developer</li>
-                <li>
-                  <strong>Mô tả:</strong> Trang Web xem tin tức từ nhiều nguồn
-                  khác nhau, người dùng có thể tìm kiếm các tin tức dựa theo các
-                  từ khóa
-                </li>
-                <li>
-                  <strong>Nhiệm vụ:</strong> Phát triển, tối ưu code và xử lý
-                  lỗi.
-                </li>
-                <li><strong>Công nghệ:</strong> HTML,CSS</li>
-              </ul>
-            </div>
-            <div>
-              <h1>CV CÁ NHÂN</h1>
-              <h3>2021</h3>
-              <div>
-                <ul>
-                  <li><strong>Vị trí:</strong> Developer</li>
-                  <li>
-                    <strong>Mô tả:</strong> Trang Web CV cá nhân online. Gồm các
-                    thông tin cá nhân cũng nhưu kỹ năng nghề nghiệp.
-                  </li>
-                  <li>
-                    <strong>Nhiệm vụ:</strong> Phát triển, tối ưu code và xử lý
-                    lỗi.
-                  </li>
-                  <li><strong>Công nghệ:</strong> HTML,CSS</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section" id="contact">
-          <h2 class="section-title">Liên hệ</h2>
-          <div class="section-content">
-            <div class="footer">
-              <ol>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Linkedin</a></li>
-                <li><a href="#">Github</a></li>
-              </ol>
-            </div>
-          </div>
-        </div> */
